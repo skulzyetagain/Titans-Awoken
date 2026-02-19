@@ -1,4 +1,7 @@
 {
   "item.firstmod.thingie": "Thingie Majiggie",
-  "item.firstmod.bronze": "Bronze Ingot"
+  "item.firstmod.bronze": "Bronze Ingot",
+
+  "block.firstmod.bronze_block": "Block of Bronze",
+  "block.firstmod.thingie_block": "Block o' Thingie 'n Majiggie"
 }
