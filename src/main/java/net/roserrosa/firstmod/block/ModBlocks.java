@@ -22,6 +22,11 @@ public class ModBlocks {
             .requiresCorrectToolForDrops()
             .sound(SoundType.COPPER)
     ));
+    public static final RegistryObject<Block> TIN_BLOCK = registerBlock("tin_block", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(3.5f)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.METAL)
+    ));
 
     public static final RegistryObject<Block> THINGIE_BLOCK = registerBlock("thingie_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(16f)

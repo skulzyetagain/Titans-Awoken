@@ -51,11 +51,13 @@ public class FirstMod {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.THINGIE);
             event.accept(ModItems.BRONZE);
+            event.accept(ModItems.TIN);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.THINGIE_BLOCK);
+            event.accept(ModBlocks.TIN_BLOCK);
         }
 
     }
