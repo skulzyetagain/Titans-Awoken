@@ -6,5 +6,7 @@
 
   "block.firstmod.bronze_block": "Block of Bronze",
   "block.firstmod.tin_block": "Block of Tin",
+  "block.firstmod.tin_ore": "Tin Ore",
+  "block.firstmod.raw_tin_block": "Block of Raw Tin",
   "block.firstmod.thingie_block": "Block o' Thingie 'n Majiggie"
 }

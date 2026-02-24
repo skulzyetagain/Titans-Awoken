@@ -52,12 +52,15 @@ public class FirstMod {
             event.accept(ModItems.THINGIE);
             event.accept(ModItems.BRONZE);
             event.accept(ModItems.TIN);
+            event.accept(ModItems.RAW_TIN);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.THINGIE_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.TIN_ORE);
+            event.accept(ModBlocks.RAW_TIN_BLOCK);
         }
 
     }

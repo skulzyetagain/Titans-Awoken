@@ -28,9 +28,21 @@ public class ModBlocks {
             .sound(SoundType.METAL)
     ));
 
+    public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(3f)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+    ));
+
+    public static final RegistryObject<Block> RAW_TIN_BLOCK = registerBlock("raw_tin_block", () -> new Block(BlockBehaviour.Properties.of()
+            .strength(4.5f)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+    ));
+
     public static final RegistryObject<Block> THINGIE_BLOCK = registerBlock("thingie_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(16f)
-            .sound(SoundType.METAL)
+            .sound(SoundType.SLIME_BLOCK)
             .speedFactor( 4f)
             .jumpFactor(4f)
     ));
