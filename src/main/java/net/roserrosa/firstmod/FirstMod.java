@@ -50,16 +50,22 @@ public class FirstMod {
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.THINGIE);
-            event.accept(ModItems.BRONZE);
-            event.accept(ModItems.TIN);
             event.accept(ModItems.RAW_TIN);
+            event.accept(ModItems.TIN_NUGGET);
+            event.accept(ModItems.BRONZE_NUGGET);
+            event.accept(ModItems.TIN);
+            event.accept(ModItems.BRONZE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.BRONZE_BLOCK);
             event.accept(ModBlocks.THINGIE_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
+            event.accept(ModBlocks.BRONZE_BLOCK);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.TIN_ORE);
+            event.accept(ModBlocks.TIN_DEEPSLATE_ORE);
             event.accept(ModBlocks.RAW_TIN_BLOCK);
         }
 

@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 900,
+  "experience": 1.8,
+  "group": "tin",
+  "ingredient": {
+    "item": "firstmod:raw_tin_block"
+  },
+  "result": {
+    "id": "firstmod:tin_block"
+  }
+}

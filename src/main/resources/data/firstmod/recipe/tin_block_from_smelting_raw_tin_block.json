@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 1800,
+  "experience": 1.8,
+  "group": "tin",
+  "ingredient": {
+    "item": "firstmod:raw_tin_block"
+  },
+  "result": {
+    "id": "firstmod:tin_block"
+  }
+}

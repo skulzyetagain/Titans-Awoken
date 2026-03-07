@@ -13,7 +13,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> THINGIE = ITEMS.register("thingie", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> BRONZE = ITEMS.register("bronze", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> BRONZE_NUGGET = ITEMS.register("bronze_nugget", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> TIN = ITEMS.register("tin", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TIN_NUGGET = ITEMS.register("tin_nugget", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> RAW_TIN = ITEMS.register("raw_tin", () -> new Item(new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

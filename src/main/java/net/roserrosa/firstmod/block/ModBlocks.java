@@ -1,8 +1,10 @@
 package net.roserrosa.firstmod.block;
 
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,16 +30,22 @@ public class ModBlocks {
             .sound(SoundType.METAL)
     ));
 
-    public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", () -> new Block(BlockBehaviour.Properties.of()
+    public static final RegistryObject<Block> TIN_ORE = registerBlock("tin_ore", () -> new DropExperienceBlock(UniformInt.of(3, 5), (BlockBehaviour.Properties.of()
             .strength(3f)
             .requiresCorrectToolForDrops()
             .sound(SoundType.STONE)
-    ));
+    )));
+
+    public static final RegistryObject<Block> TIN_DEEPSLATE_ORE = registerBlock("tin_deepslate_ore", () -> new DropExperienceBlock(UniformInt.of(3, 5), (BlockBehaviour.Properties.of()
+            .strength(4f)
+            .requiresCorrectToolForDrops()
+            .sound(SoundType.STONE)
+    )));
 
     public static final RegistryObject<Block> RAW_TIN_BLOCK = registerBlock("raw_tin_block", () -> new Block(BlockBehaviour.Properties.of()
             .strength(4.5f)
             .requiresCorrectToolForDrops()
-            .sound(SoundType.STONE)
+            .sound(SoundType.DEEPSLATE)
     ));
 
     public static final RegistryObject<Block> THINGIE_BLOCK = registerBlock("thingie_block", () -> new Block(BlockBehaviour.Properties.of()

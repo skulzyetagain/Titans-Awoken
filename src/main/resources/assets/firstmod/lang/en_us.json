@@ -1,12 +1,16 @@
 {
   "item.firstmod.thingie": "Thingie Majiggie",
   "item.firstmod.bronze": "Bronze Ingot",
+  "item.firstmod.bronze_nugget": "Bronze Nugget",
+  "item.firstmod.raw_tin": "Raw Tin",
   "item.firstmod.tin": "Tin Ingot",
+  "item.firstmod.tin_nugget": "Tin Nugget",
 
 
+  "block.firstmod.thingie_block": "Block o' Thingie 'n Majiggie",
   "block.firstmod.bronze_block": "Block of Bronze",
-  "block.firstmod.tin_block": "Block of Tin",
   "block.firstmod.tin_ore": "Tin Ore",
-  "block.firstmod.raw_tin_block": "Block of Raw Tin",
-  "block.firstmod.thingie_block": "Block o' Thingie 'n Majiggie"
+  "block.firstmod.tin_deepslate_ore": "Deepslate Tin Ore",
+  "block.firstmod.tin_block": "Block of Tin",
+  "block.firstmod.raw_tin_block": "Block of Raw Tin"
 }

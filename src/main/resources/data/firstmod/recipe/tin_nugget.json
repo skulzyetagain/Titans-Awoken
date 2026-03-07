@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "firstmod:tin"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "firstmod:tin_nugget"
+  }
+}
