@@ -49,7 +49,6 @@ public class FirstMod {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
-            event.accept(ModItems.THINGIE);
             event.accept(ModItems.RAW_TIN);
             event.accept(ModItems.TIN_NUGGET);
             event.accept(ModItems.BRONZE_NUGGET);
@@ -58,7 +57,6 @@ public class FirstMod {
         }
 
         if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-            event.accept(ModBlocks.THINGIE_BLOCK);
             event.accept(ModBlocks.TIN_BLOCK);
             event.accept(ModBlocks.BRONZE_BLOCK);
         }
