@@ -1,0 +1,16 @@
+{
+  "type": "crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": "titansawoken:tin"
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "result": {
+    "count": 1,
+    "id": "titansawoken:tin_block"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 900,
+  "experience": 4.95,
+  "group": "tin_block",
+  "ingredient": "titansawoken:raw_tin_block",
+  "result": {
+    "id": "titansawoken:tin_block"
+  }
+}

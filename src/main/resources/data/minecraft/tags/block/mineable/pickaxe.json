@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "titansawoken:bronze_block",
+    "titansawoken:tin_block",
+    "titansawoken:raw_tin_block",
+    "titansawoken:tin_ore",
+    "titansawoken:deepslate_tin_ore"
+  ]
+}

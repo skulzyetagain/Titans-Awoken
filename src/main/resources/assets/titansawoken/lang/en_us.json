@@ -1,7 +1,22 @@
 {
-  "itemGroup.titansawoken": "Example Mod Tab",
+  "item.titansawoken.bronze": "Bronze Ingot",
+  "item.titansawoken.bronze_nugget": "Bronze Nugget",
+  "item.titansawoken.tin": "Tin Ingot",
+  "item.titansawoken.tin_nugget": "Tin Nugget",
+  "item.titansawoken.raw_tin": "Raw Tin",
+
+  "block.titansawoken.bronze_block": "Block of Bronze",
+  "block.titansawoken.tin_block": "Block of Tin",
+  "block.titansawoken.raw_tin_block": "Block of Raw Tin",
+  "block.titansawoken.tin_ore": "Tin Ore",
+  "block.titansawoken.deepslate_tin_ore": "Deepslate Tin Ore",
+
+
+
+
   "block.titansawoken.example_block": "Example Block",
-  "item.titansawoken.example_item": "Example Item",
+
+  "itemGroup.titansawoken": "Example Mod Tab",
 
   "titansawoken.configuration.title": "Titans Awoken! Configs",
   "titansawoken.configuration.section.titansawoken.common.toml": "Titans Awoken! Configs",

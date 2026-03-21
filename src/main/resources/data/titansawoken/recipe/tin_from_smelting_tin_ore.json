@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.55,
+  "group": "tin",
+  "ingredient": "titansawoken:tin_ore",
+  "result": {
+    "id": "titansawoken:tin"
+  }
+}

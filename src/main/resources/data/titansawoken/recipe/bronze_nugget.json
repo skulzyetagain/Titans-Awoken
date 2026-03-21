@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "bronze_nugget",
+  "ingredients": [
+    "titansawoken:bronze"
+  ],
+  "result": {
+    "count": 9,
+    "id": "titansawoken:bronze_nugget"
+  }
+}
