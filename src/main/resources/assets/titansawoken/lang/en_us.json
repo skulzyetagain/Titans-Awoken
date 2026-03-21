@@ -1,0 +1,13 @@
+{
+  "itemGroup.titansawoken": "Example Mod Tab",
+  "block.titansawoken.example_block": "Example Block",
+  "item.titansawoken.example_item": "Example Item",
+
+  "titansawoken.configuration.title": "Titans Awoken! Configs",
+  "titansawoken.configuration.section.titansawoken.common.toml": "Titans Awoken! Configs",
+  "titansawoken.configuration.section.titansawoken.common.toml.title": "Titans Awoken! Configs",
+  "titansawoken.configuration.items": "Item List",
+  "titansawoken.configuration.logDirtBlock": "Log Dirt Block",
+  "titansawoken.configuration.magicNumberIntroduction": "Magic Number Text",
+  "titansawoken.configuration.magicNumber": "Magic Number"
+}
