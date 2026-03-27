@@ -84,6 +84,10 @@ public class TitansAwoken {
             event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
             event.accept(ModBlocks.RAW_TIN_BLOCK);
         }
+
+        if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.BRONZE_PICK);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

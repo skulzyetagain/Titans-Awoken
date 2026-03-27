@@ -50,7 +50,7 @@ public class ModBlocks {
             )
     );
     public static final DeferredBlock<Block> TIN_ORE = registerBlock("tin_ore",
-            registryName -> new DropExperienceBlock(UniformInt.of(1, 3),
+            registryName -> new Block(
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .strength(3.0f)
@@ -59,7 +59,7 @@ public class ModBlocks {
             )
     );
     public static final DeferredBlock<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
-            registryName -> new DropExperienceBlock(UniformInt.of(2, 5),
+            registryName -> new Block(
                     BlockBehaviour.Properties.of()
                             .setId(ResourceKey.create(Registries.BLOCK, registryName))
                             .strength(4.0f)

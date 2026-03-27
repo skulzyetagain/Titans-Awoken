@@ -8,6 +8,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roserrosa.titansawoken.TitansAwoken;
+import net.roserrosa.titansawoken.item.custom.PickItem;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -45,6 +46,15 @@ public class ModItems {
             () -> new Item(new  Item.Properties()
                     .setId(ResourceKey.create(Registries.ITEM,
                             Identifier.fromNamespaceAndPath(TitansAwoken.MOD_ID, "tin_nugget")
+                    ))
+            )
+    );
+
+    public static final DeferredItem<Item> BRONZE_PICK = ITEMS.register("bronze_pick",
+            () -> new PickItem(new  Item.Properties()
+                    .durability(750)
+                    .setId(ResourceKey.create(Registries.ITEM,
+                            Identifier.fromNamespaceAndPath(TitansAwoken.MOD_ID, "bronze_pick")
                     ))
             )
     );
