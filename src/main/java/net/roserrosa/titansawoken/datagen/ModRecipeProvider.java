@@ -46,7 +46,10 @@ public class ModRecipeProvider extends RecipeProvider {
         List<ItemLike> TIN_SMELTABLES = List.of(ModItems.RAW_TIN,
                 ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
         List<ItemLike> TIN_BLOCK_SMELTABLES = List.of(ModBlocks.RAW_TIN_BLOCK);
-        List<ItemLike> BRONZE_NUGGET_SMELTABLES = List.of(ModItems.BRONZE_PICK);
+        List<ItemLike> BRONZE_NUGGET_SMELTABLES = List.of(ModItems.BRONZE_PICK,
+                ModItems.BRONZE_HOE, ModItems.BRONZE_SWORD,
+                ModItems.BRONZE_AXE, ModItems.BRONZE_PICKAXE,
+                ModItems.BRONZE_SHOVEL, ModItems.BRONZE_SPEAR);
 
         shaped(RecipeCategory.MISC, ModItems.BRONZE.get())
                 .pattern("###")
@@ -92,6 +95,46 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('#', ModItems.BRONZE.get())
                 .define('+', Items.STICK)
                 .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
+///        shaped(RecipeCategory.MISC, ModItems.BRONZE_SWORD.get())
+///                .pattern(" # ")
+///                .pattern(" # ")
+///             .pattern(" + ")
+///             .define('#', ModItems.BRONZE.get())
+///             .define('+', Items.STICK)
+///             .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+///
+///     shaped(RecipeCategory.MISC, ModItems.BRONZE_PICKAXE.get())
+///             .pattern("###")
+///             .pattern(" + ")
+///             .pattern(" + ")
+///             .define('#', ModItems.BRONZE.get())
+///             .define('+', Items.STICK)
+///             .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+///
+///     shaped(RecipeCategory.MISC, ModItems.BRONZE_SHOVEL.get())
+///             .pattern(" # ")
+///             .pattern(" + ")
+///             .pattern(" + ")
+///             .define('#', ModItems.BRONZE.get())
+///             .define('+', Items.STICK)
+///             .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+///
+///     shaped(RecipeCategory.MISC, ModItems.BRONZE_HOE.get())
+///             .pattern(" # ")
+///             .pattern("  #")
+///             .pattern(" + ")
+///             .define('#', ModItems.BRONZE.get())
+///             .define('+', Items.STICK)
+///             .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+///
+///     shaped(RecipeCategory.MISC, ModItems.BRONZE_PICK.get())
+///             .pattern(" # ")
+///             .pattern("  #")
+///             .pattern(" + ")
+///             .define('#', ModItems.BRONZE.get())
+///             .define('+', Items.STICK)
+///             .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
 
         // SHAPELESS
 

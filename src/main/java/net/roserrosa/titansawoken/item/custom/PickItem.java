@@ -146,7 +146,7 @@ public class PickItem extends Item {
             if(!level.isClientSide()){
                 level.setBlockAndUpdate(context.getClickedPos(), PICK_MAP_DEEPSLATE_MANY.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(2, ((ServerLevel) level), context.getPlayer(),
+                context.getItemInHand().hurtAndBreak(3, ((ServerLevel) level), context.getPlayer(),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 BlockPos blockPos = context.getClickedPos();
@@ -167,7 +167,7 @@ public class PickItem extends Item {
             if(!level.isClientSide()){
                 level.setBlockAndUpdate(context.getClickedPos(), PICK_MAP_STONE_MANY.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), context.getPlayer(),
+                context.getItemInHand().hurtAndBreak(2, ((ServerLevel) level), context.getPlayer(),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 BlockPos blockPos = context.getClickedPos();

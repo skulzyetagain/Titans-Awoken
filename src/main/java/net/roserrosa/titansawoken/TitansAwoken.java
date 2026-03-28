@@ -86,7 +86,17 @@ public class TitansAwoken {
         }
 
         if(event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.BRONZE_SHOVEL);
+            event.accept(ModItems.BRONZE_PICKAXE);
+            event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_HOE);
             event.accept(ModItems.BRONZE_PICK);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.COMBAT) {
+            event.accept(ModItems.BRONZE_SWORD);
+            event.accept(ModItems.BRONZE_SPEAR);
+            event.accept(ModItems.BRONZE_AXE);
         }
     }
 
