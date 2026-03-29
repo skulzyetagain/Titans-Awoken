@@ -112,7 +112,7 @@ public class PickItem extends Item {
 
                 ItemEntity itemEntity = new ItemEntity(
                         level, blockPos.getX() + .5 + face.getStepX() * .5, blockPos.getY() + .25 + face.getStepY() * .5, blockPos.getZ() + .33 + face.getStepZ() * .5,
-                        new ItemStack(PICK_MAP_DEEPSLATE_ITEMS.get(clickedBlock).asItem(), Math.random() > .25 ? 3 : 2)
+                        new ItemStack(PICK_MAP_DEEPSLATE_ITEMS.get(clickedBlock).asItem(), Math.random() < .25 ? 3 : 2)
                 );
 
                 level.addFreshEntity(itemEntity);
@@ -133,7 +133,7 @@ public class PickItem extends Item {
 
                 ItemEntity itemEntity = new ItemEntity(
                         level, blockPos.getX() + .5 + face.getStepX() * .5, blockPos.getY() + .25 + face.getStepY() * .5, blockPos.getZ() + .5 + face.getStepZ() * .5,
-                        new ItemStack(PICK_MAP_STONE_ITEMS.get(clickedBlock).asItem(), Math.random() > .5 ? 2 : 1)
+                        new ItemStack(PICK_MAP_STONE_ITEMS.get(clickedBlock).asItem(), Math.random() < .5 ? 2 : 1)
                 );
 
                 level.addFreshEntity(itemEntity);
@@ -146,7 +146,7 @@ public class PickItem extends Item {
             if(!level.isClientSide()){
                 level.setBlockAndUpdate(context.getClickedPos(), PICK_MAP_DEEPSLATE_MANY.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(3, ((ServerLevel) level), context.getPlayer(),
+                context.getItemInHand().hurtAndBreak(2, ((ServerLevel) level), context.getPlayer(),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 BlockPos blockPos = context.getClickedPos();
@@ -154,7 +154,7 @@ public class PickItem extends Item {
 
                 ItemEntity itemEntity = new ItemEntity(
                         level, blockPos.getX() + .5 + face.getStepX() * .5, blockPos.getY() + .25 + face.getStepY() * .5, blockPos.getZ() + .33 + face.getStepZ() * .5,
-                        new ItemStack(PICK_MAP_DEEPSLATE_MANY_ITEMS.get(clickedBlock).asItem(), Math.random() > .33 ? 4 : 3)
+                        new ItemStack(PICK_MAP_DEEPSLATE_MANY_ITEMS.get(clickedBlock).asItem(), Math.random() < .33 ? 4 : 3)
                 );
 
                 level.addFreshEntity(itemEntity);
@@ -167,7 +167,7 @@ public class PickItem extends Item {
             if(!level.isClientSide()){
                 level.setBlockAndUpdate(context.getClickedPos(), PICK_MAP_STONE_MANY.get(clickedBlock).defaultBlockState());
 
-                context.getItemInHand().hurtAndBreak(2, ((ServerLevel) level), context.getPlayer(),
+                context.getItemInHand().hurtAndBreak(1, ((ServerLevel) level), context.getPlayer(),
                         item -> context.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 BlockPos blockPos = context.getClickedPos();
@@ -175,7 +175,7 @@ public class PickItem extends Item {
 
                 ItemEntity itemEntity = new ItemEntity(
                         level, blockPos.getX() + .5 + face.getStepX() * .5, blockPos.getY() + .25 + face.getStepY() * .5, blockPos.getZ() + .5 + face.getStepZ() * .5,
-                        new ItemStack(PICK_MAP_STONE_MANY_ITEMS.get(clickedBlock).asItem(), Math.random() > .5 ? 3 : 2)
+                        new ItemStack(PICK_MAP_STONE_MANY_ITEMS.get(clickedBlock).asItem(), Math.random() < .5 ? 3 : 2)
                 );
 
                 level.addFreshEntity(itemEntity);

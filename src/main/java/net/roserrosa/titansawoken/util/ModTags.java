@@ -8,14 +8,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.roserrosa.titansawoken.TitansAwoken;
 
-
 public class ModTags {
     public static class Blocks {
         public static final TagKey<Block> NEEDS_BRONZE_TOOL = createTag("needs_bronze_tool");
         public static final TagKey<Block> INCORRECT_FOR_BRONZE_TOOL = createTag("incorrect_for_bronze_tool");
 
         private static TagKey<Block> createTag(String name) {
-        return BlockTags.create(Identifier.fromNamespaceAndPath(TitansAwoken.MOD_ID, name));
+            return BlockTags.create(Identifier.fromNamespaceAndPath(TitansAwoken.MOD_ID, name));
         }
     }
 

@@ -95,7 +95,6 @@ public class TitansAwoken {
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.BRONZE_SWORD);
-            event.accept(ModItems.BRONZE_SPEAR);
             event.accept(ModItems.BRONZE_AXE);
         }
     }

@@ -12,12 +12,10 @@
   "block.titansawoken.deepslate_tin_ore": "Deepslate Tin Ore",
 
   "item.titansawoken.bronze_pick": "Bronze Pick",
-  "item.titansawoken.bronze_sword": "Bronze Sword",
-  "item.titansawoken.bronze_spear": "Bronze Spear",
-  "item.titansawoken.bronze_pickaxe": "Bronze Pickaxe",
-  "item.titansawoken.bronze_axe": "Bronze Axe",
-  "item.titansawoken.bronze_hoe": "Bronze Hoe",
-  "item.titansawoken.bronze_shovel": "Bronze Shovel",
+
+
+
+  "block.titansawoken.example_block": "Example Block",
 
   "itemGroup.titansawoken": "Example Mod Tab",
 
