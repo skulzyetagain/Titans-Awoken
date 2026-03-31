@@ -8,7 +8,10 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roserrosa.titansawoken.TitansAwoken;
+import net.roserrosa.titansawoken.item.custom.GreataxeItem;
 import net.roserrosa.titansawoken.item.custom.PickItem;
+import net.roserrosa.titansawoken.item.custom.ScytheItem;
+import net.roserrosa.titansawoken.item.custom.SpadeItem;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -62,16 +65,22 @@ public class ModItems {
     public static final DeferredItem<Item> BRONZE_SWORD = ITEMS.registerItem("bronze_sword",
             (properties) -> new Item(properties.sword(ModToolTiers.BRONZE, 5, -2.4f)));
     public static final DeferredItem<Item> BRONZE_AXE = ITEMS.registerItem("bronze_axe",
-            (properties) -> new Item(properties.sword(ModToolTiers.BRONZE, 7, -3f)));
+            (properties) -> new Item(properties.axe(ModToolTiers.BRONZE, 7, -3f)));
     public static final DeferredItem<Item> BRONZE_PICKAXE = ITEMS.registerItem("bronze_pickaxe",
-            (properties) -> new Item(properties.sword(ModToolTiers.BRONZE, 0, -2.8f)));
+            (properties) -> new Item(properties.pickaxe(ModToolTiers.BRONZE, 0, -2.8f)));
     public static final DeferredItem<Item> BRONZE_SHOVEL = ITEMS.registerItem("bronze_shovel",
-            (properties) -> new Item(properties.sword(ModToolTiers.BRONZE, 1, -3f)));
+            (properties) -> new Item(properties.shovel(ModToolTiers.BRONZE, 1, -3f)));
     public static final DeferredItem<Item> BRONZE_HOE = ITEMS.registerItem("bronze_hoe",
-            (properties) -> new Item(properties.sword(ModToolTiers.BRONZE, -3, 0f)));
+            (properties) -> new Item(properties.hoe(ModToolTiers.BRONZE, -4, 0f)));
     public static final DeferredItem<Item> BRONZE_SPEAR = ITEMS.registerItem("bronze_spear",
             (properties -> new Item(properties.spear(ModToolTiers.BRONZE, 1F, 0.8F, 0.6F, 3F,
                     10.0F, 7F, 5.1F, 11F, 4.6F))));
+    public static final DeferredItem<GreataxeItem> BRONZE_GREATAXE = ITEMS.registerItem("bronze_greataxe",
+            (properties) -> new GreataxeItem(properties.axe(ModToolTiers.BRONZE, 11, -3.5f)));
+    public static final DeferredItem<SpadeItem> BRONZE_SPADE = ITEMS.registerItem("bronze_spade",
+            (properties) -> new SpadeItem(properties.shovel(ModToolTiers.BRONZE, 5, -3.5f)));
+    public static final DeferredItem<ScytheItem> BRONZE_SCYTHE = ITEMS.registerItem("bronze_scythe",
+            (properties) -> new ScytheItem(properties.hoe(ModToolTiers.BRONZE, -4, 0f)));
 
 
     public static void register(IEventBus eventBus) {

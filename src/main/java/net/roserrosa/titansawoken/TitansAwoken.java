@@ -90,12 +90,17 @@ public class TitansAwoken {
             event.accept(ModItems.BRONZE_PICKAXE);
             event.accept(ModItems.BRONZE_AXE);
             event.accept(ModItems.BRONZE_HOE);
+            event.accept(ModItems.BRONZE_SPADE);
             event.accept(ModItems.BRONZE_PICK);
+            event.accept(ModItems.BRONZE_GREATAXE);
+            event.accept(ModItems.BRONZE_SCYTHE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.COMBAT) {
             event.accept(ModItems.BRONZE_SWORD);
+            event.accept(ModItems.BRONZE_SPEAR);
             event.accept(ModItems.BRONZE_AXE);
+            event.accept(ModItems.BRONZE_GREATAXE);
         }
     }
 
