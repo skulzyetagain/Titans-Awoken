@@ -64,7 +64,7 @@ public class ModModelProvider extends ModelProvider{
 
     public void generateScythe(ScytheItem item, ExtendedModelTemplateBuilder modelTemplate,  ItemModelGenerators itemModels) {
         ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(itemModels.createFlatItemModel(item, ModelTemplates.FLAT_ITEM));
-        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(modelTemplate.build().create(item, TextureMapping.layer0(TextureMapping.getItemTexture(item, "_in_hand")), itemModels.modelOutput));
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(modelTemplate.build().create(ModelLocationUtils.getModelLocation(item, "_in_hand"), TextureMapping.layer0(TextureMapping.getItemTexture(item, "_in_hand")), itemModels.modelOutput));
         itemModels.itemModelOutput.accept(item, createFlatModelDispatch(itemmodel$unbaked, itemmodel$unbaked1), new ClientItem.Properties(true, false, 1.95F));
     }
 
@@ -72,12 +72,12 @@ public class ModModelProvider extends ModelProvider{
         this.generateScythe(item,
                 ModelTemplates.FLAT_ITEM.extend()
                         .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, b -> b
-                                .rotation(0, -90, 55)
-                                .translation((float) 0, 4.0f, 0.5f)
+                                .rotation(0, 0, 55)
+                                .translation(-1.5f, 5.0f, 0.5f)
                                 .scale(1.7f)
                         )
                         .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, b -> b
-                                .rotation(0 , 90, 25)
+                                .rotation(0 , -90, 25)
                                 .translation(1.13f, 3.2f, 1.13f)
                                 .scale(1.36f)
                         ),
