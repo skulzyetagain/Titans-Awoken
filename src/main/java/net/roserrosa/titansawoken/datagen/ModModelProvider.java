@@ -17,6 +17,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.roserrosa.titansawoken.block.ModBlocks;
 import net.roserrosa.titansawoken.item.ModItems;
+import net.roserrosa.titansawoken.item.custom.GreatswordItem;
 import net.roserrosa.titansawoken.item.custom.ScytheItem;
 
 import java.util.stream.Stream;
@@ -48,6 +49,7 @@ public class ModModelProvider extends ModelProvider{
         itemModels.generateSpear(ModItems.BRONZE_GREATAXE.get());
         itemModels.generateSpear(ModItems.BRONZE_SPADE.get());
         generateScythe(ModItems.BRONZE_SCYTHE.get(), itemModels);
+        generateGreatsword(ModItems.BRONZE_GREATSWORD.get(), itemModels);
 
         // BLOCKS
         blockModels.createTrivialCube(ModBlocks.BRONZE_BLOCK.get());
@@ -79,6 +81,28 @@ public class ModModelProvider extends ModelProvider{
                         .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, b -> b
                                 .rotation(0 , -90, 25)
                                 .translation(1.13f, 3.2f, 1.13f)
+                                .scale(1.36f)
+                        ),
+                itemGenerator);
+    }
+
+    public void generateGreatsword(GreatswordItem item, ExtendedModelTemplateBuilder modelTemplate, ItemModelGenerators itemModels) {
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(itemModels.createFlatItemModel(item, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(modelTemplate.build().create(ModelLocationUtils.getModelLocation(item, "_in_hand"), TextureMapping.layer0(TextureMapping.getItemTexture(item, "_in_hand")), itemModels.modelOutput));
+        itemModels.itemModelOutput.accept(item, createFlatModelDispatch(itemmodel$unbaked, itemmodel$unbaked1), new ClientItem.Properties(true, false, 1.95F));
+    }
+
+    public void generateGreatsword(GreatswordItem item,   ItemModelGenerators itemGenerator) {
+        this.generateGreatsword(item,
+                ModelTemplates.FLAT_ITEM.extend()
+                        .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, b -> b
+                                .rotation(0, -90, 55)
+                                .translation(0f, 10.0f, 0.5f)
+                                .scale(1.7f)
+                        )
+                        .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, b -> b
+                                .rotation(0 , -90, 25)
+                                .translation(1.13f, 4.2f, 1.13f)
                                 .scale(1.36f)
                         ),
                 itemGenerator);

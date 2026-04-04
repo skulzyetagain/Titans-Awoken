@@ -93,8 +93,6 @@ public class PickItem extends Item {
         super(properties);
     }
 
-
-
     @Override
     public InteractionResult useOn(UseOnContext context) {
         Level level = context.getLevel();

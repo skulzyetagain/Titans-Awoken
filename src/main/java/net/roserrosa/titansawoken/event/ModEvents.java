@@ -25,6 +25,7 @@ import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import net.roserrosa.titansawoken.item.custom.GreataxeItem;
+import net.roserrosa.titansawoken.item.custom.GreatswordItem;
 import net.roserrosa.titansawoken.item.custom.ScytheItem;
 import net.roserrosa.titansawoken.item.custom.SpadeItem;
 
@@ -97,6 +98,29 @@ public class ModEvents {
 
             for(BlockPos pos : ScytheItem.getBlocksToBeDestroyed(2, initialBlockPos, serverPlayer)) {
                 if(pos == initialBlockPos || !scythe.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
+                    continue;
+                }
+
+                HARVESTED_BLOCKS.add(pos);
+                serverPlayer.gameMode.destroyBlock(pos);
+                HARVESTED_BLOCKS.remove(pos);
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onGreatswordUsage(BlockEvent.BreakEvent event) {
+        Player player = event.getPlayer();
+        ItemStack mainHandItem = player.getMainHandItem();
+
+        if(mainHandItem.getItem() instanceof GreatswordItem greatsword && player instanceof ServerPlayer serverPlayer) {
+            BlockPos initialBlockPos = event.getPos();
+            if(HARVESTED_BLOCKS.contains(initialBlockPos)) {
+                return;
+            }
+
+            for(BlockPos pos : GreatswordItem.getBlocksToBeDestroyed(1, initialBlockPos, serverPlayer)) {
+                if(pos == initialBlockPos || !greatsword.isCorrectToolForDrops(mainHandItem, event.getLevel().getBlockState(pos))) {
                     continue;
                 }
 

@@ -1,17 +1,26 @@
 package net.roserrosa.titansawoken.item;
 
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.entity.EquipmentSlotGroup;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.AttackRange;
+import net.minecraft.world.item.component.BlocksAttacks;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roserrosa.titansawoken.TitansAwoken;
-import net.roserrosa.titansawoken.item.custom.GreataxeItem;
-import net.roserrosa.titansawoken.item.custom.PickItem;
-import net.roserrosa.titansawoken.item.custom.ScytheItem;
-import net.roserrosa.titansawoken.item.custom.SpadeItem;
+import net.roserrosa.titansawoken.item.custom.*;
+
+import java.util.List;
+import java.util.Optional;
 
 public class ModItems {
     public static final DeferredRegister.Items ITEMS =
@@ -75,6 +84,15 @@ public class ModItems {
     public static final DeferredItem<Item> BRONZE_SPEAR = ITEMS.registerItem("bronze_spear",
             (properties -> new Item(properties.spear(ModToolTiers.BRONZE, 1F, 0.8F, 0.6F, 3F,
                     10.0F, 7F, 5.1F, 11F, 4.6F))));
+
+    public static final DeferredItem<GreatswordItem> BRONZE_GREATSWORD = ITEMS.registerItem("bronze_greatsword",
+            (properties -> new GreatswordItem(properties.sword(ModToolTiers.BRONZE, 13, -2.8f)
+                    .component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(1.0F, 1.5F,
+                            List.of(new BlocksAttacks.DamageReduction(20.0F, Optional.empty(), 0.0F, 0.66F)),
+                            new BlocksAttacks.ItemDamageFunction(0.0F, 2.0F, 2F),
+                            Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SPEAR_HIT), Optional.of(SoundEvents.ITEM_BREAK)))
+                    .component(DataComponents.ATTACK_RANGE, new AttackRange(0.0F, 4.5F, 0.0F,
+                            5.0F, 0.3F, 1.0F)))));
     public static final DeferredItem<GreataxeItem> BRONZE_GREATAXE = ITEMS.registerItem("bronze_greataxe",
             (properties) -> new GreataxeItem(properties.axe(ModToolTiers.BRONZE, 11, -3.5f)));
     public static final DeferredItem<SpadeItem> BRONZE_SPADE = ITEMS.registerItem("bronze_spade",
