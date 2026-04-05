@@ -76,7 +76,7 @@ public class ModModelProvider extends ModelProvider{
                         .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, b -> b
                                 .rotation(0, 0, 55)
                                 .translation(-1.5f, 5.0f, 0.5f)
-                                .scale(1.7f)
+                                .scale(1.7f, 1.7f, 0.85f)
                         )
                         .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, b -> b
                                 .rotation(0 , -90, 25)

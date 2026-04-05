@@ -1,5 +1,6 @@
 package net.roserrosa.titansawoken.item;
 
+import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.AttackRange;
 import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.component.PiercingWeapon;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -87,7 +89,7 @@ public class ModItems {
 
     public static final DeferredItem<GreatswordItem> BRONZE_GREATSWORD = ITEMS.registerItem("bronze_greatsword",
             (properties -> new GreatswordItem(properties.sword(ModToolTiers.BRONZE, 13, -2.8f)
-                    .component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(1.0F, 1.5F,
+                    .component(DataComponents.BLOCKS_ATTACKS, new BlocksAttacks(0.66F, 1.5F,
                             List.of(new BlocksAttacks.DamageReduction(20.0F, Optional.empty(), 0.0F, 0.66F)),
                             new BlocksAttacks.ItemDamageFunction(0.0F, 2.0F, 2F),
                             Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SPEAR_HIT), Optional.of(SoundEvents.ITEM_BREAK)))
