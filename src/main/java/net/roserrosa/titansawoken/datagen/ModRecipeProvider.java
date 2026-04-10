@@ -160,6 +160,33 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('+', Items.STICK)
                 .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
 
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_GREATSWORD.get())
+                .pattern(" ##")
+                .pattern("##-")
+                .pattern("+a-")
+                .define('#', ModItems.BRONZE.get())
+                .define('+', Items.STICK)
+                .define('a', Items.STRING)
+                .define('-', Items.LEATHER)
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_LANCE.get())
+                .pattern("#  ")
+                .pattern(" ##")
+                .pattern("-#+")
+                .define('#', ModItems.BRONZE.get())
+                .define('+', ModItems.BRONZE_SPEAR.get())
+                .define('-', Items.STRING)
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_SPEAR.get())
+                .pattern("#  ")
+                .pattern(" + ")
+                .pattern("  +")
+                .define('#', ModItems.BRONZE.get())
+                .define('+', ModItems.BRONZE_SPEAR.get())
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
 
         // SHAPELESS
 

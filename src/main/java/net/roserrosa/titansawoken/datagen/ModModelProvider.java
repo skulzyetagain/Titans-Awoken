@@ -50,6 +50,7 @@ public class ModModelProvider extends ModelProvider{
         itemModels.generateSpear(ModItems.BRONZE_SPADE.get());
         generateScythe(ModItems.BRONZE_SCYTHE.get(), itemModels);
         generateGreatsword(ModItems.BRONZE_GREATSWORD.get(), itemModels);
+        generateLance(ModItems.BRONZE_LANCE.get(), itemModels);
 
         // BLOCKS
         blockModels.createTrivialCube(ModBlocks.BRONZE_BLOCK.get());
@@ -104,6 +105,28 @@ public class ModModelProvider extends ModelProvider{
                                 .rotation(0 , -90, 25)
                                 .translation(1.13f, 4.2f, 1.13f)
                                 .scale(1.36f)
+                        ),
+                itemGenerator);
+    }
+
+    public void generateLance(Item item, ExtendedModelTemplateBuilder modelTemplate, ItemModelGenerators itemModels) {
+        ItemModel.Unbaked itemmodel$unbaked = ItemModelUtils.plainModel(itemModels.createFlatItemModel(item, ModelTemplates.FLAT_ITEM));
+        ItemModel.Unbaked itemmodel$unbaked1 = ItemModelUtils.plainModel(modelTemplate.build().create(ModelLocationUtils.getModelLocation(item, "_in_hand"), TextureMapping.layer0(TextureMapping.getItemTexture(item, "_in_hand")), itemModels.modelOutput));
+        itemModels.itemModelOutput.accept(item, createFlatModelDispatch(itemmodel$unbaked, itemmodel$unbaked1), new ClientItem.Properties(true, false, 1.95F));
+    }
+
+    public void generateLance(Item item,   ItemModelGenerators itemGenerator) {
+        this.generateLance(item,
+                ModelTemplates.FLAT_ITEM.extend()
+                        .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND, b -> b
+                                .rotation(0, -90, -45)
+                                .translation(0f, 10.0f, 0.5f)
+                                .scale(2.55f, 2.55f, 1.7f)
+                        )
+                        .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND, b -> b
+                                .rotation(0 , -90, -45)
+                                .translation(1.13f, 4.2f, 1.13f)
+                                .scale(2.4f)
                         ),
                 itemGenerator);
     }

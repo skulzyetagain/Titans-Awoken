@@ -1,5 +1,6 @@
 package net.roserrosa.titansawoken.item;
 
+import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.client.resources.sounds.Sound;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
@@ -11,11 +12,9 @@ import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.component.AttackRange;
-import net.minecraft.world.item.component.BlocksAttacks;
-import net.minecraft.world.item.component.ItemAttributeModifiers;
-import net.minecraft.world.item.component.PiercingWeapon;
+import net.minecraft.world.item.component.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.roserrosa.titansawoken.TitansAwoken;
@@ -94,13 +93,20 @@ public class ModItems {
                             new BlocksAttacks.ItemDamageFunction(0.0F, 2.0F, 2F),
                             Optional.of(DamageTypeTags.BYPASSES_SHIELD), Optional.of(SoundEvents.SPEAR_HIT), Optional.of(SoundEvents.ITEM_BREAK)))
                     .component(DataComponents.ATTACK_RANGE, new AttackRange(0.0F, 4.5F, 0.0F,
-                            5.0F, 0.3F, 1.0F)))));
+                            5.0F, 0.0F, 1.0F)))));
     public static final DeferredItem<GreataxeItem> BRONZE_GREATAXE = ITEMS.registerItem("bronze_greataxe",
             (properties) -> new GreataxeItem(properties.axe(ModToolTiers.BRONZE, 11, -3.5f)));
     public static final DeferredItem<SpadeItem> BRONZE_SPADE = ITEMS.registerItem("bronze_spade",
             (properties) -> new SpadeItem(properties.shovel(ModToolTiers.BRONZE, 5, -3.5f)));
     public static final DeferredItem<ScytheItem> BRONZE_SCYTHE = ITEMS.registerItem("bronze_scythe",
             (properties) -> new ScytheItem(properties.hoe(ModToolTiers.BRONZE, -4, 0f)));
+    public static final DeferredItem<Item> BRONZE_LANCE= ITEMS.registerItem("bronze_lance",
+            (properties -> new Item(properties.spear(ModToolTiers.BRONZE, 1.5F, 3.2F, 0.6F, 4.5F,
+                                8.0F, 7F, 4.5F, 13F, 4.6F)
+                    .component(DataComponents.ATTACK_RANGE, new AttackRange(2.5f, 6F, 2.5F,
+                            6.0F, 0.3F, 1.0F))
+                    .component(DataComponents.USE_EFFECTS, new UseEffects( true, true, 1.5f))
+                    .component(DataComponents.WEAPON, new Weapon(1, 7.5f)))));
 
 
     public static void register(IEventBus eventBus) {
