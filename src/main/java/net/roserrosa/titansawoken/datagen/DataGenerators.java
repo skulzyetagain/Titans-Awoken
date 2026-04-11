@@ -7,6 +7,7 @@ import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
 import net.roserrosa.titansawoken.TitansAwoken;
 
@@ -22,11 +23,31 @@ public class DataGenerators {
         PackOutput packOutput = generator.getPackOutput();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
-        generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
+        generator.addProvider(true , new LootTableProvider(packOutput, Collections.emptySet(),
                 List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
-
         generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
 
-        generator.addProvider( true, new ModModelProvider(packOutput));
+        BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider);
+        generator.addProvider(true, blockTagsProvider);
+        generator.addProvider(true, new ModItemTagProvider(packOutput, lookupProvider));
+
+        generator.addProvider(true, new ModModelProvider(packOutput));
+    }
+
+    @SubscribeEvent
+    public static void gatherServerData(GatherDataEvent.Server event) {
+        DataGenerator generator = event.getGenerator();
+        PackOutput packOutput = generator.getPackOutput();
+        CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
+
+        generator.addProvider(true, new LootTableProvider(packOutput, Collections.emptySet(),
+                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTableProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+        generator.addProvider(true, new ModRecipeProvider.Runner(packOutput, lookupProvider));
+
+        BlockTagsProvider blockTagsProvider = new ModBlockTagProvider(packOutput, lookupProvider);
+        generator.addProvider(true, blockTagsProvider);
+        generator.addProvider(true, new ModItemTagProvider(packOutput, lookupProvider));
+
+        generator.addProvider(true, new ModModelProvider(packOutput));
     }
 }

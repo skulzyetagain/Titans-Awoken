@@ -103,6 +103,10 @@ public class TitansAwoken {
             event.accept(ModItems.BRONZE_GREATSWORD);
             event.accept(ModItems.BRONZE_LANCE);
             event.accept(ModItems.BRONZE_GREATAXE);
+            event.accept(ModItems.BRONZE_HELMET);
+            event.accept(ModItems.BRONZE_CHESTPLATE);
+            event.accept(ModItems.BRONZE_LEGGINGS);
+            event.accept(ModItems.BRONZE_BOOTS);
         }
     }
 

@@ -36,5 +36,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.SPEARS)
                 .add(ModItems.BRONZE_SPEAR.get());
 
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.BRONZE_HELMET.get())
+                .add(ModItems.BRONZE_CHESTPLATE.get())
+                .add(ModItems.BRONZE_LEGGINGS.get())
+                .add(ModItems.BRONZE_BOOTS.get());
+
     }
 }

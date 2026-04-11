@@ -13,6 +13,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.*;
+import net.minecraft.world.item.equipment.ArmorType;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -103,11 +104,18 @@ public class ModItems {
     public static final DeferredItem<Item> BRONZE_LANCE= ITEMS.registerItem("bronze_lance",
             (properties -> new Item(properties.spear(ModToolTiers.BRONZE, 1.5F, 3.2F, 0.6F, 4.5F,
                                 8.0F, 7F, 4.5F, 13F, 4.6F)
-                    .component(DataComponents.ATTACK_RANGE, new AttackRange(2.5f, 6F, 2.5F,
-                            6.0F, 0.3F, 1.0F))
+                    .component(DataComponents.ATTACK_RANGE, new AttackRange(2.5f, 6.5F, 2.5F,
+                            6.5F, 0.3F, 1.0F))
                     .component(DataComponents.USE_EFFECTS, new UseEffects( true, true, 1.5f))
                     .component(DataComponents.WEAPON, new Weapon(1, 7.5f)))));
-
+    public static final DeferredItem<Item> BRONZE_HELMET = ITEMS.registerItem("bronze_helmet",
+            (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.HELMET)));
+    public static final DeferredItem<Item> BRONZE_CHESTPLATE = ITEMS.registerItem("bronze_chestplate",
+            (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.CHESTPLATE)));
+    public static final DeferredItem<Item> BRONZE_LEGGINGS = ITEMS.registerItem("bronze_leggings",
+            (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.LEGGINGS)));
+    public static final DeferredItem<Item> BRONZE_BOOTS = ITEMS.registerItem("bronze_boots",
+            (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.BOOTS)));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

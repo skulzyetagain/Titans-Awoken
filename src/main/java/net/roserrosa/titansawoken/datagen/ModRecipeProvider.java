@@ -46,7 +46,12 @@ public class ModRecipeProvider extends RecipeProvider {
         List<ItemLike> TIN_SMELTABLES = List.of(ModItems.RAW_TIN,
                 ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
         List<ItemLike> TIN_BLOCK_SMELTABLES = List.of(ModBlocks.RAW_TIN_BLOCK);
-        List<ItemLike> BRONZE_NUGGET_SMELTABLES = List.of(ModItems.BRONZE_PICK);
+        List<ItemLike> BRONZE_NUGGET_SMELTABLES = List.of(
+                ModItems.BRONZE_SWORD, ModItems.BRONZE_AXE, ModItems.BRONZE_PICKAXE, ModItems.BRONZE_PICK,
+                ModItems.BRONZE_SHOVEL, ModItems.BRONZE_HOE, ModItems.BRONZE_SPEAR,
+                ModItems.BRONZE_HELMET, ModItems.BRONZE_CHESTPLATE, ModItems.BRONZE_LEGGINGS, ModItems.BRONZE_BOOTS);
+        List<ItemLike> BRONZE_SMELTABLES = List.of(
+                ModItems.BRONZE_GREATSWORD, ModItems.BRONZE_GREATAXE, ModItems.BRONZE_SPADE, ModItems.BRONZE_SCYTHE, ModItems.BRONZE_LANCE);
 
         shaped(RecipeCategory.MISC, ModItems.BRONZE.get())
                 .pattern("###")
@@ -187,6 +192,32 @@ public class ModRecipeProvider extends RecipeProvider {
                 .define('+', ModItems.BRONZE_SPEAR.get())
                 .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
 
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_HELMET.get())
+                .pattern("###")
+                .pattern("# #")
+                .define('#', ModItems.BRONZE.get())
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_CHESTPLATE.get())
+                .pattern("# #")
+                .pattern("###")
+                .pattern("###")
+                .define('#', ModItems.BRONZE.get())
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_LEGGINGS.get())
+                .pattern("###")
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', ModItems.BRONZE.get())
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
+        shaped(RecipeCategory.MISC, ModItems.BRONZE_BOOTS.get())
+                .pattern("# #")
+                .pattern("# #")
+                .define('#', ModItems.BRONZE.get())
+                .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
+
 
         // SHAPELESS
 
@@ -217,12 +248,14 @@ public class ModRecipeProvider extends RecipeProvider {
         oreSmelting(output, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN.get(), 0.55f,200, "tin");
         oreSmelting(output, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get(), 4.95f,1800, "tin_block");
         oreSmelting(output, BRONZE_NUGGET_SMELTABLES, RecipeCategory.MISC, ModItems.BRONZE_NUGGET.get(), 0.2f,200, "bronze_nugget");
+        oreSmelting(output, BRONZE_SMELTABLES, RecipeCategory.MISC, ModItems.BRONZE.get(), 0.2f,200, "bronze");
 
         // BLAST
 
         oreBlasting(output, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN.get(), 0.55f,100, "tin");
         oreBlasting(output, TIN_BLOCK_SMELTABLES, RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get(), 4.95f,900, "tin_block");
         oreBlasting(output, BRONZE_NUGGET_SMELTABLES, RecipeCategory.MISC, ModItems.BRONZE_NUGGET.get(), 0.2f,100, "bronze_nugget");
+        oreBlasting(output, BRONZE_SMELTABLES, RecipeCategory.MISC, ModItems.BRONZE.get(), 0.2f,100, "bronze");
 
     }
         protected void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,
