@@ -2,18 +2,21 @@ package net.roserrosa.titansawoken.item;
 
 import net.minecraft.client.input.InputWithModifiers;
 import net.minecraft.client.resources.sounds.Sound;
+import net.minecraft.core.Holder;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.tags.DamageTypeTags;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.*;
 import net.minecraft.world.item.equipment.ArmorType;
+import net.minecraft.world.item.equipment.Equippable;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.event.entity.living.LivingEquipmentChangeEvent;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -109,7 +112,9 @@ public class ModItems {
                     .component(DataComponents.USE_EFFECTS, new UseEffects( true, true, 1.5f))
                     .component(DataComponents.WEAPON, new Weapon(1, 7.5f)))));
     public static final DeferredItem<Item> BRONZE_HELMET = ITEMS.registerItem("bronze_helmet",
-            (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.HELMET)));
+            (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.HELMET)
+                    .component(DataComponents.EQUIPPABLE, new Equippable(EquipmentSlot.HEAD, SoundEvents.ARMOR_EQUIP_COPPER, Optional.empty(), Optional.empty(),
+                            Optional.empty(),true, true, true, false, false, Holder.direct(SoundEvents.SHEARS_SNIP)))));
     public static final DeferredItem<Item> BRONZE_CHESTPLATE = ITEMS.registerItem("bronze_chestplate",
             (properties) -> new Item(properties.humanoidArmor(ModArmorMaterials.BRONZE_ARMOR_MATERIAL, ArmorType.CHESTPLATE)));
     public static final DeferredItem<Item> BRONZE_LEGGINGS = ITEMS.registerItem("bronze_leggings",
