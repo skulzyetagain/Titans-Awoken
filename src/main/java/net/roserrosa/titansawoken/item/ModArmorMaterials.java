@@ -19,11 +19,11 @@ public class ModArmorMaterials {
 
     public static final ArmorMaterial BRONZE_ARMOR_MATERIAL = new ArmorMaterial(1200,
             Util.make(new EnumMap<>(ArmorType.class), attribute -> {
-                attribute.put(ArmorType.BOOTS, 5);
-                attribute.put(ArmorType.LEGGINGS, 7);
-                attribute.put(ArmorType.CHESTPLATE, 9);
-                attribute.put(ArmorType.HELMET, 5);
+                attribute.put(ArmorType.BOOTS, 3);
+                attribute.put(ArmorType.LEGGINGS, 5);
+                attribute.put(ArmorType.CHESTPLATE, 7);
+                attribute.put(ArmorType.HELMET, 3);
                 attribute.put(ArmorType.BODY, 11);
-            }), 16, SoundEvents.ARMOR_EQUIP_DIAMOND,
-            2f, 0.1f, ModTags.Items.BRONZE_REPAIRABLE, BRONZE);
+            }), 16, SoundEvents.ARMOR_EQUIP_COPPER,
+            0f, 0f, ModTags.Items.BRONZE_REPAIRABLE, BRONZE);
 }
