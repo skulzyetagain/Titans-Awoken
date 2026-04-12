@@ -189,7 +189,7 @@ public class ModRecipeProvider extends RecipeProvider {
                 .pattern(" + ")
                 .pattern("  +")
                 .define('#', ModItems.BRONZE.get())
-                .define('+', ModItems.BRONZE_SPEAR.get())
+                .define('+', Items.STICK)
                 .unlockedBy("has_bronze", has(ModItems.BRONZE)).save(output);
 
         shaped(RecipeCategory.MISC, ModItems.BRONZE_HELMET.get())
