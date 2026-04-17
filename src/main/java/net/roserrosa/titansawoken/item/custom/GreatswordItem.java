@@ -2,20 +2,14 @@ package net.roserrosa.titansawoken.item.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.component.AttackRange;
-import net.minecraft.world.item.component.BlocksAttacks;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 public class GreatswordItem extends Item{
 

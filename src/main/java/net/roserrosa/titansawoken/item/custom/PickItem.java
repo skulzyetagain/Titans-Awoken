@@ -17,10 +17,8 @@ import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.neoforged.neoforge.common.ItemAbility;
 import net.roserrosa.titansawoken.block.ModBlocks;
 import net.roserrosa.titansawoken.item.ModItems;
-import net.roserrosa.titansawoken.util.ModTags;
 
 
 import java.util.Map;
